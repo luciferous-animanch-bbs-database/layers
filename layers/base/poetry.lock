@@ -33,7 +33,10 @@ files = [
 [package.dependencies]
 botocore-stubs = "*"
 mypy-boto3-dynamodb = {version = ">=1.34.0,<1.35.0", optional = true, markers = "extra == \"dynamodb\""}
+mypy-boto3-events = {version = ">=1.34.0,<1.35.0", optional = true, markers = "extra == \"events\""}
 mypy-boto3-s3 = {version = ">=1.34.0,<1.35.0", optional = true, markers = "extra == \"s3\""}
+mypy-boto3-sqs = {version = ">=1.34.0,<1.35.0", optional = true, markers = "extra == \"sqs\""}
+mypy-boto3-ssm = {version = ">=1.34.0,<1.35.0", optional = true, markers = "extra == \"ssm\""}
 types-s3transfer = "*"
 
 [package.extras]
@@ -493,6 +496,17 @@ files = [
 ]
 
 [[package]]
+name = "mypy-boto3-events"
+version = "1.34.17"
+description = "Type annotations for boto3.EventBridge 1.34.17 service generated with mypy-boto3-builder 7.23.1"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "mypy-boto3-events-1.34.17.tar.gz", hash = "sha256:2ffefc6bdef99855b0e71047e1eb74d63e016bdfda19be4d50aeddfdb3edb095"},
+    {file = "mypy_boto3_events-1.34.17-py3-none-any.whl", hash = "sha256:97f55ede04c94111e6460646e822399402dc70797fed09c5509f384861da9a1a"},
+]
+
+[[package]]
 name = "mypy-boto3-s3"
 version = "1.34.14"
 description = "Type annotations for boto3.S3 1.34.14 service generated with mypy-boto3-builder 7.21.0"
@@ -501,6 +515,28 @@ python-versions = ">=3.8"
 files = [
     {file = "mypy-boto3-s3-1.34.14.tar.gz", hash = "sha256:71c39ab0623cdb442d225b71c1783f6a513cff4c4a13505a2efbb2e3aff2e965"},
     {file = "mypy_boto3_s3-1.34.14-py3-none-any.whl", hash = "sha256:f9669ecd182d5bf3532f5f2dcc5e5237776afe157ad5a0b37b26d6bec5fcc432"},
+]
+
+[[package]]
+name = "mypy-boto3-sqs"
+version = "1.34.0"
+description = "Type annotations for boto3.SQS 1.34.0 service generated with mypy-boto3-builder 7.21.0"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "mypy-boto3-sqs-1.34.0.tar.gz", hash = "sha256:0bf8995f58919ab295398100e72eaa7da898adcfd9d339a42f3c48ce473419d5"},
+    {file = "mypy_boto3_sqs-1.34.0-py3-none-any.whl", hash = "sha256:94d8aea4ae75605f70e58e440d706e04d5c614101ddb2f0c73d306d776d10995"},
+]
+
+[[package]]
+name = "mypy-boto3-ssm"
+version = "1.34.47"
+description = "Type annotations for boto3.SSM 1.34.47 service generated with mypy-boto3-builder 7.23.1"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "mypy-boto3-ssm-1.34.47.tar.gz", hash = "sha256:be70cc32f9a07e6701746ebe65fba14d59c3f24a8511d275fd8322c9365f2270"},
+    {file = "mypy_boto3_ssm-1.34.47-py3-none-any.whl", hash = "sha256:6517b1dc01e3ffe48a251c91e2a7fb6801223baf4a8cf1600411f9e132422297"},
 ]
 
 [[package]]
@@ -597,4 +633,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "bb5e8f4597490ff0e5730a11ba7f59219d3a814e65c8733611c200862def51f8"
+content-hash = "88bea90e15f571ef0de465e4c2b87dcaa6176d9ac30d0fc1a44e0d5952250a6c"
