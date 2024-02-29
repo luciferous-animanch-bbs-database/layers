@@ -20,37 +20,30 @@ terraform {
 # ================================================================
 
 provider "aws" {
-  region = var.region
+  region = local.region
 
   default_tags {
     tags = {
-      SystemName = var.system_name
+      SystemName = local.system_name
     }
   }
 }
 
 # ================================================================
-# Variables
+# Artifacts Bucket
 # ================================================================
 
-variable "region" {
-  type     = string
-  nullable = false
+locals {
+  region      = "ap-northeast-1"
+  system_name = "luciferous-animanch-bbs-database-layers"
 }
 
-variable "system_name" {
-  type     = string
-  nullable = false
-}
+# ================================================================
+# Artifacts Bucket
+# ================================================================
 
-variable "s3_bucket" {
-  type     = string
-  nullable = false
-}
-
-variable "s3_key_prefix" {
-  type     = string
-  nullable = false
+resource "aws_s3_bucket" "artifacts" {
+  bucket_prefix = "artifacts-layers-"
 }
 
 # ================================================================
@@ -61,10 +54,10 @@ module "base" {
   source = "./modules/layer"
 
   source_directory = "layers/base"
-  parameter_name   = "BaseLayer"
+  parameter_name   = "LayerArnBase"
 
-  s3_bucket     = var.s3_bucket
-  s3_key_prefix = var.s3_key_prefix
+  s3_bucket     = aws_s3_bucket.artifacts.bucket
+  s3_key_prefix = "layers"
 }
 
 # ================================================================

@@ -4,7 +4,7 @@ clean:
 	find layers -type d -name python | xargs rm -rf
 
 build:
-	./build.sh --name base --arch amd64 --runtime-version 3.10
+	./build.sh --name base --arch amd64 --runtime-version 3.12
 
 package:
 	sam package \
