@@ -6,7 +6,7 @@ WORKDIR /tmp
 ADD pyproject.toml /tmp/pyproject.toml
 ADD poetry.lock /tmp/poetry.lock
 
-RUN pip install poetry
+RUN pip install poetry poetry-plugin-export
 RUN poetry export > requirements.txt
 
 FROM public.ecr.aws/sam/build-python${RUNTIME_VERSION}:latest

@@ -43,7 +43,7 @@ fi
 cd "layers/$layer_name"
 
 docker image build -f ../../Dockerfile -t $layer_name --platform linux/$architecture --build-arg="RUNTIME_VERSION=${runtime_version}" .
-docker container run --name=$layer_name $layer_name
+docker container run --platform linux/$architecture --name=$layer_name $layer_name
 docker container cp $layer_name:/tmp/layer/python .
 docker container rm $layer_name
 docker image rm $layer_name
